@@ -16,13 +16,12 @@ class ProductSeeder extends Seeder
     {
         $major_categories = Category::all();
         foreach ($major_categories as $major_category) {
-            print($major_category->id);
 
             $client = new \GuzzleHttp\Client();
-            $response = $client->request('GET', 'https://tienda.mercadona.es/api/categories/'. $major_category->api_id);
+            $response = $client->request('GET', 'https://tienda.mercadona.es/api/categories/' . $major_category->api_id);
 
             $body = json_decode($response->getBody(), true);
-            
+
             $categories = $body['categories'];
             foreach ($categories as $category) {
                 foreach ($category['products'] as $product) {
@@ -38,7 +37,5 @@ class ProductSeeder extends Seeder
                 }
             }
         }
-
-        
     }
 }

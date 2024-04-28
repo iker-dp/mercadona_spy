@@ -18,4 +18,5 @@ class Product extends Model
         'previous_price',
         'category_id'
     ];
+    public $timestamps = true;
 }

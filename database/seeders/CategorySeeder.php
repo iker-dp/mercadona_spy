@@ -33,10 +33,10 @@ class CategorySeeder extends Seeder
                     'api_id' => $category['id'],
                     'name' => $category['name'],
                 ]);
-                print("Category $category_db->id created\n");
+                print("Category $category_db->name created\n");
             }
 
-            print("Category $category_db->id created\n");
+            print("Category $category_db->name created\n");
         }
     }
 }

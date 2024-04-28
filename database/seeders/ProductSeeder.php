@@ -30,7 +30,7 @@ class ProductSeeder extends Seeder
                         'api_id' => $product['id'],
                         'name' => $product['display_name'],
                         'actual_price' => $product['price_instructions']['bulk_price'],
-                        'previous_price' => -1,
+                        'previous_price' => $product['price_instructions']['bulk_price'],
                         'category_id' => $major_category->api_id
                     ]);
 
